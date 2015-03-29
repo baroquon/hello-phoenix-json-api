@@ -14,13 +14,11 @@ defmodule HelloPhoenix.ContactController do
     render conn, "new"
   end
 
-  def create(conn, %{"contact" => %{"name" => name}}) do
-    contact = %Contact{name: name}
+  def create(conn, params) do
+    contact = %Contact{name: params["name"], phone: params["phone"]}
+    Repo.insert(contact)
 
-    case Contact.validate(contact) do
-      [] ->
-        contact = Repo.insert(contact)
-    end
+    redirect conn, Router.contact_path(:index)
+
   end
-
 end
