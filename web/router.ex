@@ -2,7 +2,7 @@ defmodule HelloPhoenix.Router do
   use Phoenix.Router
 
   pipeline :api do
-    plug CORSPlug, [origin: "http://localhost:4200", methods: "GET, POST, PUT, DELETE"]
+    plug CORSPlug, [origin: "*", methods: "GET, POST, PUT, DELETE, OPTIONS"]
     plug :accepts, ["json"]
   end
 

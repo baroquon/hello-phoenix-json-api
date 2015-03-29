@@ -25,7 +25,7 @@ defmodule HelloPhoenix.Mixfile do
     [{:phoenix, "~> 0.10.0"},
      {:phoenix_ecto, "~> 0.1"},
      {:postgrex, ">= 0.0.0"},
-     {:cors_plug, "~> 0.1.2"},
+     {:cors_plug, git: "https://github.com/mschae/cors_plug.git"},
      {:cowboy, "~> 1.0"}]
   end
 end
